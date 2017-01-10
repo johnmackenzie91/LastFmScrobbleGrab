@@ -1,0 +1,97 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	first:        true,
+	instructions: 'A valid API key for Last.fm',
+	label:        "API key"|t,
+	id:           'apiKey',
+	name:         'apiKey',
+	value:		  settings.apiKey,
+	autofocus:    true,
+	errors:       settings.getErrors('apiKey')
+}) }}
+
+{{ forms.textField({
+	label:        "Username"|t,
+	instructions: "A valid last.fm username",
+	id:           'username',
+	name:         'username',
+	value:		  settings.username,
+	autofocus:    true,
+	errors:       settings.getErrors('username')
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Currently Playing"|t,
+	id:			"showCurrentlyPlaying",
+	name:		"showCurrentlyPlaying",
+	value:		 true,
+	checked:	settings.showCurrentlyPlaying
+
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Recently Played"|t,
+	id:			"show-recently-played",
+	name:		"showRecentlyPlayed",
+	value:		 true,
+	checked:	settings.showRecentlyPlayed
+
+}) }}
+
+{{ forms.textField({
+	label:        "Track Limit"|t,
+	instructions: "The number of 'Recently Played' tracks returned by the query",
+	id:           'limit',
+	name:         'limit',
+	value:		  (settings.limit ? settings.limit : "3"|t),
+	autofocus:    true,
+	errors:       settings.getErrors('limit')
+}) }}
+
+{{ forms.textField({
+	label:        "Requery Frequency"|t,
+	instructions: "Please input as milliseconds",
+	id:           'requeryFrequency',
+	name:         'requeryFrequency',
+	value:		  (settings.requeryFrequency ? settings.requeryFrequency : "30000"|t),
+	autofocus:    true,
+	errors:       settings.getErrors('requeryFrequency')
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Artist"|t,
+	id:			"show-artist",
+	name:		"showArtist",
+	value:		true,
+	checked:	settings.showArtist
+
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Track"|t,
+	id:			"show-track",
+	name:		"showTrack",
+	value:		 true,
+	checked:	settings.showTrack
+
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Album Thumbnail"|t,
+	id:			"show-thumbnail",
+	name:		"showAlbumThumbnail",
+	value:		true,
+	checked:	settings.showAlbumThumbnail
+
+}) }}
+
+{{ forms.checkboxField({
+	label:		"Show Album Text"|t,
+	id:			"show-album",
+	name:		"showAlbum",
+	value:		 true,
+	checked:	settings.showAlbum
+
+}) }}
+

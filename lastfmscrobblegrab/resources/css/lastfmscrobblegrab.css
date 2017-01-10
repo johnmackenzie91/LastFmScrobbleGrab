@@ -1,0 +1,43 @@
+.lastfm-scrobble-grab{
+	width: 100%;
+	display: inline-block;
+}
+.scrobble-currently-playing{
+	width: 25%;
+	display: inline-block;
+	background: #FFFFCC;
+	float:left;
+}
+
+.scrobble-recently-played{
+	width: 75%;
+	display: inline-block;
+	float: right;
+}
+
+.scrobble-recently-played-only{
+	width: 100%;
+	display: inline-block;
+	float: right;
+}
+
+.scrobble-recently-played .scrobble-track{
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.thumbnail-wrapper{
+	margin: 5px;
+}
+.thumbnail-wrapper, .artist-info-wrapper {
+	display: inline-block;
+	float: left;
+}
+.thumbnail-wrapper{
+
+}
+.artist-info-wrapper {
+	/*width: 50%;*/
+}
+
