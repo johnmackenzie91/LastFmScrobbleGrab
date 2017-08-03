@@ -3,7 +3,6 @@ namespace Craft;
 
 class LastfmscrobblegrabPlugin extends BasePlugin
 {
-
 	function getName()
 	{
 		return Craft::t('Last FM Scrobble Grab');
@@ -39,7 +38,6 @@ class LastfmscrobblegrabPlugin extends BasePlugin
 			'showTrack' => array(AttributeType::Bool)
 		);
 	}
-
 
 	public function getSettingsHtml()
 	{

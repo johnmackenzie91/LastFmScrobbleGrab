@@ -4,8 +4,6 @@ $(function() {
 
 	window.setInterval(function(){
 
-console.log($elem);
-
 		var url = '/actions/lastfmscrobblegrab/update/updatescrobble?limit=' + $elem.data('scrobble-limit') + '&' +
 				 'username=' + $elem.data('scrobble-username') + '&' +
 				 'showcurrentlyplaying=' + $elem.data('scrobble-showcurrentlyplaying') + '&' +
@@ -14,8 +12,6 @@ console.log($elem);
 				 'showartist=' + $elem.data('scrobble-showartist') + '&' +
 				 'showalbum=' + $elem.data('scrobble-showalbum') + '&' +
 				 'showtrack=' + $elem.data('scrobble-showtrack');
-		
-		console.log($elem.data());
 
 		$.ajax({
 			url: url,
@@ -23,16 +19,15 @@ console.log($elem);
 			dataType: 'json',
 			success: function(data){
 
-						if(data.success == true){
-							var scroggleListElement = $('#lastfm-scrobble-grab')
-							if(scroggleListElement.length > 0){
-								scroggleListElement.empty();
-								scroggleListElement.html(data.data);
-							}
-						}
+				if (data.success == true) {
+					var scroggleListElement = $('#lastfm-scrobble-grab')
+					if(scroggleListElement.length > 0){
+						scroggleListElement.empty();
+						scroggleListElement.html(data.data);
+					}
+				}
 			}
 		});
 		
 	}, $elem.data('scrobble-requeryfrequency'), $elem);
-
 });
